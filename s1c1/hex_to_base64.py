@@ -1,3 +1,5 @@
+import base64
+
 BASE64_ENCODING_MAP = [
     "A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M", "N", "O", "P", "Q", "R", "S", "T", "U",
     "V", "W", "X", "Y", "Z", "a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p",
@@ -7,8 +9,16 @@ BASE64_ENCODING_MAP = [
 
 # TODO: Don't use in built python for this either
 def convert_hex_to_base64(input):
-    input_bytes = bytes.fromhex(input)
-    return convert_bytes_to_base64(input_bytes)
+    input_bytes = hex_decode(input)
+    return convert_bytes_to_base64_python_inbuilt(input_bytes)
+
+
+def hex_decode(input):
+    return bytes.fromhex(input)
+
+
+def convert_bytes_to_base64_python_inbuilt(ch_bytes):
+    return base64.b64encode(ch_bytes)
 
 
 def convert_bytes_to_base64(ch_bytes):
