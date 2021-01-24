@@ -1,16 +1,16 @@
 from s1.s1c1.hex_to_base64 import hex_decode
 
 
-def xor(str1, str2):
-    return bytes(a ^ b for (a,b) in zip(str1, str2))
+def xor(bytes1, bytes2):
+    return bytes(a ^ b for (a, b) in zip(bytes1, bytes2))
 
 
-def manual_xor(str1, str2):
-    assert len(str1) == len(str2)
+def manual_xor(bytes1, bytes2):
+    assert len(bytes1) == len(bytes2)
     result_bytes = []
-    for i in range(len(str1)):
-        byte1 = str1[i]
-        byte2 = str2[i]
+    for i in range(len(bytes1)):
+        byte1 = bytes1[i]
+        byte2 = bytes2[i]
 
         result_byte = byte1 ^ byte2
         result_bytes.append(result_byte)
