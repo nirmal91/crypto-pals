@@ -1,4 +1,4 @@
-from s1c1.hex_to_base64 import hex_decode
+from s1.s1c1.hex_to_base64 import hex_decode
 
 
 def xor(str1, str2):
